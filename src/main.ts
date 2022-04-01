@@ -6,7 +6,7 @@ import { App } from "./app";
 
 import config from './environment/environment.json';
 
-const socket = io(`${config.hostUrl}:${config.socketPort}`);
+const socket = io(`${config.hostUrl}`);
 let homeRenderer: Home = null;
 let isHost = true;
 
