@@ -18,13 +18,13 @@ const environment_json_1 = __importDefault(require("../environment/environment.j
 class CactusApi {
     static newGame() {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield (0, node_fetch_1.default)(`${environment_json_1.default.hostUrl}:${environment_json_1.default.apiPort}/game/new`, { method: 'POST' });
+            const response = yield (0, node_fetch_1.default)(`${environment_json_1.default.hostUrl}/game/new`, { method: 'POST' });
             return +(yield response.json())['gameId'];
         });
     }
     static joinGame(gameId, playerName, socketId) {
         return __awaiter(this, void 0, void 0, function* () {
-            const response = yield (0, node_fetch_1.default)(`${environment_json_1.default.hostUrl}:${environment_json_1.default.apiPort}/game/player/new`, { method: 'POST', headers: {
+            const response = yield (0, node_fetch_1.default)(`${environment_json_1.default.hostUrl}/game/player/new`, { method: 'POST', headers: {
                     'Content-Type': 'application/json'
                 }, body: JSON.stringify({
                     gameId,
@@ -36,7 +36,7 @@ class CactusApi {
     }
     static runGame(gameId) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield (0, node_fetch_1.default)(`${environment_json_1.default.hostUrl}:${environment_json_1.default.apiPort}/game/start`, { method: 'POST', headers: {
+            yield (0, node_fetch_1.default)(`${environment_json_1.default.hostUrl}/game/start`, { method: 'POST', headers: {
                     'Content-Type': 'application/json'
                 }, body: JSON.stringify({
                     gameId

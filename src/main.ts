@@ -4,7 +4,7 @@ import { Cactus } from "./cactus";
 import { GameRenderer } from "./gameRenderer";
 import { App } from "./app";
 
-import config from '../environment/environment.json';
+import config from './environment/environment.json';
 
 const socket = io(`${config.hostUrl}:${config.socketPort}`);
 let homeRenderer: Home = null;

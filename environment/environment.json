@@ -1,5 +1,4 @@
 {
     "hostUrl": "https://sheltered-ravine-51287.herokuapp.com",
-    "socketPort": 3030,
-    "clientPort": 3000
+    "socketPort": 3030
 }

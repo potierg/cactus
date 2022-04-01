@@ -54,7 +54,7 @@ class PlayersListPage {
         this.app.stage.addChild(this.background);
     }
     displayLink(gameId) {
-        this.linkString = `${environment_json_1.default.hostUrl}:${environment_json_1.default.clientPort}?game=${gameId}`;
+        this.linkString = `${environment_json_1.default.hostUrl}?game=${gameId}`;
         document.getElementById('gameLink').hidden = false;
         document.getElementById('gameLink').value = this.linkString;
     }

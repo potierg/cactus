@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js"
 
-import config from '../../environment/environment.json';
+import config from '../environment/environment.json';
 
 export class PlayersListPage {
     private app: PIXI.Application;
@@ -43,7 +43,7 @@ export class PlayersListPage {
     }
 
     private displayLink(gameId: number) {
-        this.linkString = `${config.hostUrl}:${config.clientPort}?game=${gameId}`;
+        this.linkString = `${config.hostUrl}?game=${gameId}`;
         document.getElementById('gameLink').hidden = false;
         (<HTMLInputElement>document.getElementById('gameLink')).value = this.linkString;
     }

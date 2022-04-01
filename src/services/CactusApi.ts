@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-import config from '../../environment/environment.json';
+import config from '../environment/environment.json';
 
 export class CactusApi {
     static async newGame(): Promise<number> {
