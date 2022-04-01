@@ -4,12 +4,12 @@ import config from '../../environment/environment.json';
 
 export class CactusApi {
     static async newGame(): Promise<number> {
-        const response = await fetch(`${config.hostUrl}:${config.apiPort}/game/new`, {method: 'POST'});
+        const response = await fetch(`${config.hostUrl}/game/new`, {method: 'POST'});
         return +(await response.json())['gameId'];
     }
 
     static async joinGame(gameId, playerName, socketId): Promise<{playerId: number, secretKey: number, name: number}> {
-        const response = await fetch(`${config.hostUrl}:${config.apiPort}/game/player/new`, {method: 'POST', headers: {
+        const response = await fetch(`${config.hostUrl}/game/player/new`, {method: 'POST', headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify({
             gameId,
@@ -20,7 +20,7 @@ export class CactusApi {
     }
 
     static async runGame(gameId) {
-        await fetch(`${config.hostUrl}:${config.apiPort}/game/start`, {method: 'POST', headers: {
+        await fetch(`${config.hostUrl}/game/start`, {method: 'POST', headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify({
             gameId
